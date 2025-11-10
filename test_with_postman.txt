@@ -1,0 +1,23 @@
+# banking-backend-pipeline
+
+# Register User 1
+curl -X POST "http://localhost:8080/api/bank/register?name=John%20Doe&email=john@example.com"
+
+# Register User 2
+curl -X POST "http://localhost:8080/api/bank/register?name=Jane%20Smith&email=jane@example.com"
+
+# Check Account 1
+curl -X GET "http://localhost:8080/api/bank/account/1"
+
+# Deposit 1000
+curl -X POST "http://localhost:8080/api/bank/deposit/1?amount=1000"
+
+# Withdraw 300
+curl -X POST "http://localhost:8080/api/bank/withdraw/1?amount=300"
+
+# Transfer 200 from Account 1 to Account 2
+curl -X POST "http://localhost:8080/api/bank/transfer?from=1&to=2&amount=200"
+
+# Check both accounts
+curl -X GET "http://localhost:8080/api/bank/account/1"
+curl -X GET "http://localhost:8080/api/bank/account/2"
