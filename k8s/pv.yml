@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+  namespace: banking
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: mysql-storage
+  hostPath:
+    path: /data/mysql
+    type: DirectoryOrCreate
+---
+# Note: For cloud providers, use cloud-specific storage classes
+# AWS: EBS volumes
+# GCP: Persistent Disk
+# Azure: Azure Disk
+# For production, use dynamic provisioning with StorageClass instead
+
